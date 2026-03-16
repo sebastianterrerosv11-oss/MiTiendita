@@ -10,5 +10,15 @@ def registrar_producto():
     precios.append(precio)
     
     print("Producto registrado correctamente\n")
-
-
+//deberia ir primero el menu
+def menu():
+    while True:
+        print("===== TIENDA ESCOLAR =====")
+        print("1. Registrar producto")
+        print("2. Mostrar productos")
+        print("3. Calcular total de compra")
+        print("4. Salir")
+        
+    print("Producto registrado correctamente\n")
+    
+     
