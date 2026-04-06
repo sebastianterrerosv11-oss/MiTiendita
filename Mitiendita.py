@@ -72,3 +72,48 @@ def hacer_compra():
         return
  
     imprimir_factura(carrito)    
+def imprimir_factura(carrito):
+    print("\n" + "=" * 48)
+    print("          🛒  FACTURA - TIENDA ESCOLAR")
+    print("=" * 48)
+    print("{:<20} {:>6} {:>10} {:>10}".format("Producto", "Cant.", "Precio", "Subtotal"))
+    print("-" * 48)
+ 
+    total = 0
+    for nombre, precio, cantidad in carrito:
+        subtotal = precio * cantidad
+        total += subtotal
+        print("{:<20} {:>6} {:>10,.2f} {:>10,.2f}".format(
+            nombre[:20], cantidad, precio, subtotal))
+ 
+    print("-" * 48)
+    print("{:>38} {:>9,.2f}".format("TOTAL:", total))
+    print("=" * 48)
+    print("         ¡Gracias por su compra!\n")
+ 
+ 
+def menu():
+    while True:
+        print("===== TIENDA ESCOLAR =====")
+        print("1. Registrar producto")
+        print("2. Mostrar productos")
+        print("3. Realizar compra")
+        print("4. Salir")
+ 
+        opcion = input("Seleccione una opción: ").strip()
+ 
+        if opcion == "1":
+            registrar_producto()
+        elif opcion == "2":
+            mostrar_productos()
+        elif opcion == "3":
+            hacer_compra()
+        elif opcion == "4":
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Opción inválida. Intente de nuevo.\n")
+ 
+ 
+if __name__ == "__main__":
+    menu()    
